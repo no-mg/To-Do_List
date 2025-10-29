@@ -5,15 +5,74 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>To-Do List</title>
     <link rel="stylesheet" href="./styles/reset.css" />
+    <link rel="stylesheet" href="./styles/variables.css" />
     <link rel="stylesheet" href="./styles/styles.css" />
-    <script src="./scripts/main.js" defer></script>
+
+    <script type="module" src="./scripts/main.js"></script>
   </head>
   <body>
-    <h1>TODO LIST</h1>
-    <div class="enter">
-      <input type="text" placeholder="Введите заметку..." id="input"/>
-      <button id="buttonInput">Добавить</button>
+    <header>
+      <h1>TODO List</h1>
+      <nav class="header__theme-menu">
+        <button class="header__theme-menu-button button_dark">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="22"
+            height="22"
+            fill="none"
+          >
+            <path
+              fill="#252525"
+              fill-rule="evenodd"
+              d="M11.125.549c.214.368.196.827-.046 1.178a6.61 6.61 0 0 0 9.194 9.194 1.102 1.102 0 0 1 1.723 1C21.52 17.567 16.786 22 11.018 22 4.933 22 0 17.067 0 10.982 0 5.213 4.433.481 10.08.004c.424-.036.831.176 1.045.545ZM8.18 2.635a8.819 8.819 0 0 0-5.976 8.347 8.814 8.814 0 0 0 8.814 8.814c3.875 0 7.166-2.5 8.347-5.976A8.814 8.814 0 0 1 8.18 2.634Z"
+              clip-rule="evenodd"
+            />
+          </svg>
+        </button>
+        <button class="header__theme-menu-button button_light">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="22"
+            height="22"
+            fill="none"
+            viewBox="0 0 24 24"
+          >
+            <circle cx="12" cy="12" r="5" stroke="#ffffff" stroke-width="2" />
+            <path
+              stroke="#ffffff"
+              stroke-width="2"
+              d="M12 1v3M12 20v3M4.22 4.22l2.14 2.14M17.64 17.64l2.14 2.14M1 12h3M20 12h3M4.22 19.78l2.14-2.14M17.64 6.36l2.14-2.14"
+            />
+          </svg>
+        </button>
+      </nav>
+    </header>
+    <main>
+      <section class="enter">
+        <input type="text" placeholder="Введите заметку..." id="input" />
+        <button id="buttonInput">Добавить</button>
+      </section>
+
+      <section>
+        <input type="text" id="search" placeholder="Поиск по задачам..." />
+        <ul id="list"></ul>
+      </section>
+    </main>
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <h2 id="modal-title"></h2>
+        <textarea
+          id="modal-desc"
+          placeholder="Описание отсутствует..."
+        ></textarea>
+        <div class="modal-buttons">
+          <button id="save-desc">Сохранить</button>
+          <button id="close-desc">Закрыть</button>
+        </div>
+      </div>
     </div>
-    <ul id="list"></ul>
+    <footer>
+      <p>© Made by Angelina</p>
+    </footer>
   </body>
 </html>
